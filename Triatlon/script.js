@@ -25,9 +25,16 @@ form.addEventListener('submit', e =>{
   //Sentencia if para ver si existe la lista con los atletas
 
   //if (localStorage.getItem("list") === null) {
+  
+  // read bd in localStorage
+  bD = JSON.parse(localStorage.getItem("list"))
+  // push datosAtleta to bd
+  bD.push(datosAtleta);
+  // save in bd
+  localStorage.setItem("list", JSON.stringify(bD));
 
-    localStorage.setItem("list", JSON.stringify(datosAtleta));
-    console.log(JSON.parse(localStorage.getItem("list")) )
+  // show bd
+  console.log(JSON.parse(localStorage.getItem("list")) )
 
   /*} else {
     agregar();
